@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+      body {margin: 30px;}
+    </style>
+  </head>
+  <body>
+    <table id="myTable" border="1">
+      <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+      </tr>
+      <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+      </tr>
+      <tr>
+        <td>Row3 cell1</td>
+        <td>Row3 cell2</td>
+      </tr>
+    </table>
+    <form>
+      <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+    <script>
+      function changeContent(){
+        const rn = prompt("input row number(1,2,3): ");
+        const cn = prompt("input column number(1,2): ");
+        const content = prompt("input the content");
+        const x = document.getElementById('myTable');
+        x.rows[parseInt(rn,10)-1].cells[parseInt(cn,10)-1].innerHTML = content;
+      }
+    </script>
+  </body>
+</html>
