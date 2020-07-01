@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SignUp Page</title>
+    <style type="text/css">
+
+    .err_msg
+    {
+      color:red;
+      text-decoration:underline;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1>Sign Up Page</h1>
+    <form id="signUp" method="post">
+      <table>
+        <tr>
+          <td></td>
+          <td><label id="email_msg" class="err_msg"></label></td>
+        </tr>
+        <tr>
+          <td>Email: </td>
+          <td> <input id="email" type="email" name="email" size="30" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label id="username_msg" class="err_msg"></label></td>
+        </tr>
+        <tr>
+          <td>Username: </td>
+          <td> <input id="username" type="text" name="username" size="30" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label id="password_msg" class="err_msg"></label></td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td> <input id="password" type="password" name="password" size="30"/></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><label id="password2_msg" class="err_msg"></label></td>
+        </tr>
+        <tr>
+          <td>Confirm Password: </td>
+          <td> <input id="password2" type="password" name="passwordConfirm" size="30" /></td>
+        </tr>
+      </table>
+      <br>
+      <input type="button" value="SignUp" id="btn-sign-up" />
+      <input type="reset" value ="Reset " id="btn-reset"/>
+    </form>
+    <div id="display_info"></div>
+    <p><a href = "#">Back to index page</a></p>
+    <script src="js/form.js"> </script>
+  </body>
+</html>
