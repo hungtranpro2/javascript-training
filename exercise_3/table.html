@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+      table{
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Intro To JS</h1>
+    <form id="myForm"
+      style="align-content:space-around; display: flex; flex-direction: row">
+      <label>First Name
+        <input name="firstName" type="text" />
+      </label>
+      <label>Age
+        <input name="age" type="number" />
+      </label>
+      <label>Meal Pref
+        <select name="pref">
+          <option>Meat</option>
+          <option>Veg</option>
+        </select>
+      </label>
+
+      <input type="submit" id = "btn" value="Add" />
+    </form>
+
+    <table >
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Age</th>
+            <th>Pref</th>
+          </tr>
+        </thead>
+        <tbody id="myTbody">
+        </tbody>
+      </table>
+    </table>
+    <script src="js/table.js"></script>
+  </body>
+</html>
