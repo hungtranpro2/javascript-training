@@ -1,31 +1,31 @@
 const records = [];
-const myForm = document.getElementById('signUp');
+const signupForm = document.getElementById('signUp');
 
 const reset = document.getElementById('btn-reset');
 reset.addEventListener('click',() => {
-  myForm.reset();
+  signupForm.reset();
 });
 const signUp = document.getElementById('btn-sign-up');
 signUp.addEventListener('click',signUpForm);
 
-function signUpForm(){
+function signUpForm() {
   let value = true;
 
   const emailValue = document.getElementById('email').value.trim();
   const usernameValue = document.getElementById('username').value.trim();
   const passwordValue = document.getElementById('password').value.trim();
-  const password2Value = document.getElementById('password2').value.trim();
+  const passwordConfirmValue = document.getElementById('passwordConfirm').value.trim();
 
   const email_msg = document.getElementById('email_msg');
   const username_msg = document.getElementById('username_msg');
   const password_msg = document.getElementById('password_msg');
-  const password2_msg = document.getElementById('password2_msg');
+  const passwordConfirm_msg = document.getElementById('passwordConfirm_msg');
   email_msg.innerHTML = "";
   username_msg.innerHTML = "";
   password_msg.innerHTML = "";
-  password2_msg.innerHTML = "";
+  passwordConfirm_msg.innerHTML = "";
 
-  if(emailValue === ''){
+  if(emailValue === '') {
     email_msg.innerHTML = 'Email cannot be blank';
     value = false;
   } else if(!isEmail(emailValue)) {
@@ -33,42 +33,42 @@ function signUpForm(){
     value = false;
   }
 
-  if(usernameValue === ''){
+  if(usernameValue === '') {
     username_msg.innerHTML = 'UserName cannot be blank';
     value = false;
-  }else if(!isName(usernameValue)){
+  } else if(!isUserName(usernameValue)) {
     username_msg.innerHTML = 'User name is not invalid';
     value = false;
   }
 
-  if(passwordValue === ''){
+  if(passwordValue === '') {
     password_msg.innerHTML = 'Password cannot be blank';
     value = false;
-  } else if(passwordValue.length<8 || passwordValue.length>20){
+  } else if(passwordValue.length<8 || passwordValue.length>20) {
     password_msg.innerHTML = 'Password be must greater than 8 and less than 20';
     value = false;
   }
 
-  if(password2Value === ''){
-    password2_msg.innerHTML = 'Password Confirm cannot be blank';
+  if(passwordConfirmValue === '') {
+    passwordConfirm_msg.innerHTML = 'Password Confirm cannot be blank';
     value = false;
-  } else if(passwordValue !== password2Value){
-    password2_msg.innerHTML = 'Password Confirm does not match';
+  } else if(passwordValue !== passwordConfirmValue) {
+    passwordConfirm_msg.innerHTML = 'Password Confirm does not match';
     value = false;
   }
 
-  if(value==true){
+  if(value) {
     const info = document.getElementById('display_info');
     info.innerHTML = `Email: ${emailValue}</br>
     Username: ${usernameValue}</br>
     Password: ${passwordValue}</br>
-    Password: ${password2Value}</br>`
+    Password: ${passwordConfirmValue}</br>`
 
     const newRecord = {
       email: emailValue,
       username: usernameValue,
       password: passwordValue,
-      password2: password2Value
+      passwordConfirm: passwordConfirmValue
     }
 
     records.push(newRecord);
@@ -85,7 +85,7 @@ function drawTable() {
                   <td>${x.email}</td>
                   <td>${x.username}</td>
                   <td>${x.password}</td>
-                  <td>${x.password2}</td>
+                  <td>${x.passwordConfirm}</td>
                  </tr>`;
   }table.innerHTML = txt;
 }
@@ -95,7 +95,7 @@ function isEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-function isName(username) {
+function isUserName(username) {
   const re = /^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
   return re.test(String(username));
 }

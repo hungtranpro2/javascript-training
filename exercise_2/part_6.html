@@ -28,11 +28,11 @@
     </form>
     <script>
       function changeContent(){
-        const rn = prompt("input row number(1,2,3): ");
-        const cn = prompt("input column number(1,2): ");
+        const rowNew = prompt("input row number(1,2,3): ");
+        const columnNew = prompt("input column number(1,2): ");
         const content = prompt("input the content");
-        const x = document.getElementById('myTable');
-        x.rows[parseInt(rn,10)-1].cells[parseInt(cn,10)-1].innerHTML = content;
+        const table = document.getElementById('myTable');
+        table.rows[parseInt(rowNew,10)].cells[parseInt(columnNew,10)].innerHTML = content;
       }
     </script>
   </body>

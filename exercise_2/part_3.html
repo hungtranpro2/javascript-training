@@ -10,11 +10,11 @@
     <p>This is paragraph 2</p>
     <input type="submit" value="Submit">
     <script>
-      const p = document.querySelectorAll('p');
+      const paragraph = document.querySelectorAll('p');
       const submit = document.querySelector('input');
       submit.onclick = () => {
-        p[0].style.background = 'red';
-        p[1].style.background = 'green';
+        paragraph[0].style.background = 'red';
+        paragraph[1].style.background = 'green';
       }
     </script>
   </body>

@@ -9,12 +9,12 @@
       First name: <input type="text" name="fName" value="David"><br>
       Last name: <input type="text" name="lName" value="Beckham"><br>
       <input type="submit" value="Submit">
-      </form>
+    </form>
     <script>
       function getFormValue() {
         const ip = document.querySelectorAll('input');
         for (let x of ip){
-          if(x.value!='Submit')
+          if(x.value!=='Submit')
           alert(x.value);
         }
       }

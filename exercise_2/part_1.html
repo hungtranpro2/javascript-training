@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html>
+<html>
   <head>
     <meta charset=utf-8 />
     <title>JS DOM paragraph style</title>
@@ -8,11 +8,11 @@
     <p id ='text'>JavaScript Exercises - w3resource</p>
     <div>
       <button id="js-style"
-       onclick="js_style()">Style</button>
+       onclick="changeStyle()">Style</button>
     </div>
     <script>
       let p = document.querySelector('#text');
-      function js_style() {
+      function changeStyle() {
         p.style.fontFamily = "Comic Sans MS";
         p.style.fontSize = "25px";
         p.style.color = "green";

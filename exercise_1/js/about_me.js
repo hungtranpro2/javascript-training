@@ -3,8 +3,8 @@ document.querySelector('#nickname').textContent = "Hung";
 document.querySelector('#favorites').textContent = "Play Games";
 document.querySelector('#hometown').textContent = "TT.Hue";
 
-const li = document.querySelectorAll('li');
-for(let x of li) {
+const listItems = document.querySelectorAll('li');
+for(let x of listItems) {
   x.className = 'list-item';
 }
 

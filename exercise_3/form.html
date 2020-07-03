@@ -9,6 +9,12 @@
       color:red;
       text-decoration:underline;
     }
+    .list, .list th,.list td{
+      border: 1px solid black;
+    }
+    .list{
+      margin: 10px;
+    }
     </style>
   </head>
 
@@ -42,11 +48,11 @@
         </tr>
         <tr>
           <td></td>
-          <td><label id="password2_msg" class="err_msg"></label></td>
+          <td><label id="passwordConfirm_msg" class="err_msg"></label></td>
         </tr>
         <tr>
           <td>Confirm Password: </td>
-          <td> <input id="password2" type="password" name="passwordConfirm" size="30" /></td>
+          <td> <input id="passwordConfirm" type="password" name="passwordConfirm" size="30" /></td>
         </tr>
       </table>
       <br>
@@ -54,6 +60,18 @@
       <input type="reset" value ="Reset " id="btn-reset"/>
     </form>
     <div id="display_info"></div>
+    <table class="list">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Confirm</th>
+        </tr>
+      </thead>
+      <tbody id="myTbody">
+      </tbody>
+    </table>
     <p><a href = "#">Back to index page</a></p>
     <script src="js/form.js"> </script>
   </body>

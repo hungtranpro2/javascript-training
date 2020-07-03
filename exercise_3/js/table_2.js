@@ -21,7 +21,7 @@ const addTask = (event) => {
 
   renderTasks(pomodoroTableBody, tasks);
 }
-pomodoroForm.addEventListener( 'submit', addTask);
+pomodoroForm.addEventListener('submit', addTask);
 
 const renderTasks = (tBodyNode, tasks = []) => {
   tBodyNode.innerHTML = tasks.map( ( task, id ) => `

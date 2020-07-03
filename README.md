@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# javascript-training
-=======
 # JAVASCRIPT PRACTICE
 ## INTRODUCTION
 - Doing Exercise.
@@ -31,4 +28,3 @@
 - Open url `http://localhost:1234` in your browser
 ## Authors
 - Hung Tran
->>>>>>> Init javascript practice

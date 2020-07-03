@@ -2,50 +2,50 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+const passwordConfirm = document.getElementById('passwordConfirm');
 
 form.addEventListener('submit',(e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    checkInputs();
+  checkInputs();
 });
 
 function checkInputs() {
   // Get the values from the input
- const usernameValue = username.value.trim();
- const emailValue = email.value.trim();
- const passwordValue = password.value.trim();
- const password2Value = password2.value.trim();
+  const usernameValue = username.value.trim();
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+  const passwordConfirmValue = passwordConfirm.value.trim();
 
- if(usernameValue === '') {
-   setErrorFor(username, 'User cannot be blank');
- } else {
-   setSuccessFor(username);
- }
+  if(usernameValue === '') {
+    setErrorFor(username, 'User cannot be blank');
+  } else {
+    setSuccessFor(username);
+  }
 
- if(emailValue === '') {
-  setErrorFor(email, 'Email cannot be blank');
- }else if(!isEmail(emailValue)){
-  setErrorFor(email, 'Email is not invalid');
- } else {
-  setSuccessFor(email);
- }
+  if(emailValue === '') {
+    setErrorFor(email, 'Email cannot be blank');
+  } else if(!isEmail(emailValue)){
+    setErrorFor(email, 'Email is not invalid');
+  } else {
+    setSuccessFor(email);
+  }
 
- if(passwordValue === '') {
-  setErrorFor(password, 'Password cannot be blank');
- } else if(passwordValue.length<7){
-  setErrorFor(password, 'Password must be greater than 7');
- } else {
-  setSuccessFor(password);
- }
+  if(passwordValue === '') {
+    setErrorFor(password, 'Password cannot be blank');
+  } else if(passwordValue.length<7){
+    setErrorFor(password, 'Password must be greater than 7');
+  } else {
+    setSuccessFor(password);
+  }
 
- if(password2Value === '') {
-  setErrorFor(password2, 'Password Confirm cannot be blank');
- } else if(passwordValue !== password2Value){
-  setErrorFor(password2, 'Password Confirm does not match');
- } else {
-  setSuccessFor(password2);
- }
+  if(passwordConfirmValue === '') {
+    setErrorFor(passwordConfirm, 'Password Confirm cannot be blank');
+  } else if(passwordValue !== passwordConfirmValue){
+    setErrorFor(passwordConfirm, 'Password Confirm does not match');
+  } else {
+    setSuccessFor(passwordConfirm);
+  }
 }
 
 function setErrorFor(input, message) {
