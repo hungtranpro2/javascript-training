@@ -10,21 +10,22 @@ const books = [
     author: 'Brian Christian',
     img: 'http://ecx.images-amazon.com/images/I/41Z56GwEv9L._AA115_.jpg',
     alreadyRead: true
-  }];
+  }
+];
 
 // Bonus
-const ul = document.createElement('ul');
-for(let x of books) {
-  let li = document.createElement('li');
+const lists = document.createElement('ul');
+for(let book of books) {
+  let list = document.createElement('li');
   let img = document.createElement('img');
-  img.src = x.img;
-  li.appendChild(img);
-  let bookP = document.createElement('p');
-  bookP.textContent = x.title + ' by ' + x.author;
-  li.appendChild(bookP);
-  if(x.alreadyRead){
-    li.style.color = 'green';
+  img.src = book.img;
+  list.appendChild(img);
+  let paragraph = document.createElement('p');
+  paragraph.textContent = book.title + ' by ' + book.author;
+  list.appendChild(paragraph);
+  if(book.alreadyRead){
+    list.style.color = 'green';
   }
-  ul.appendChild(li);
+  lists.appendChild(list);
 }
-document.body.appendChild(ul);
+document.body.appendChild(lists);

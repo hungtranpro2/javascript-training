@@ -22,9 +22,8 @@
 
       function getOptions() {
         const selected = document.querySelector('#mySelect');
-        let text = 'No. of items: ';
-        text += selected.length;
-        for(let i = 0;i<selected.length;i++) {
+        let text = `No. of items: ${selected.length}`;
+        for(let i = 0; i < selected.length; i++) {
           text = text + '\n' + selected.options[i].textContent;
         }
         alert(text);

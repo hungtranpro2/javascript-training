@@ -12,8 +12,8 @@
     </form>
     <script>
       function getFormValue() {
-        const ip = document.querySelectorAll('input');
-        for (let x of ip){
+        const values = document.querySelectorAll('input');
+        for (let x of values){
           if(x.value!=='Submit')
           alert(x.value);
         }

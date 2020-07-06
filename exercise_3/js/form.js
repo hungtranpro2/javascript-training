@@ -25,34 +25,42 @@ function signUpForm() {
   password_msg.innerHTML = "";
   passwordConfirm_msg.innerHTML = "";
 
-  if(emailValue === '') {
+  if(!emailValue) {
     email_msg.innerHTML = 'Email cannot be blank';
     value = false;
-  } else if(!isEmail(emailValue)) {
-    email_msg.innerHTML = 'Email is not invalid';
-    value = false;
   }
 
-  if(usernameValue === '') {
+  if(emailValue && !isEmail(emailValue)) {
+      email_msg.innerHTML = 'Email is not invalid';
+      value = false;
+  }
+
+  if(!usernameValue) {
     username_msg.innerHTML = 'UserName cannot be blank';
     value = false;
-  } else if(!isUserName(usernameValue)) {
-    username_msg.innerHTML = 'User name is not invalid';
+  }
+
+  if(usernameValue && !isUserName(usernameValue)) {
+    username_msg.innerHTML = 'UserName is not invalid';
     value = false;
   }
 
-  if(passwordValue === '') {
+  if(!passwordValue) {
     password_msg.innerHTML = 'Password cannot be blank';
     value = false;
-  } else if(passwordValue.length<8 || passwordValue.length>20) {
+  }
+
+  if(passwordValue && (passwordValue.length < 8 || passwordValue.length > 20)) {
     password_msg.innerHTML = 'Password be must greater than 8 and less than 20';
     value = false;
   }
 
-  if(passwordConfirmValue === '') {
+  if(!passwordConfirmValue) {
     passwordConfirm_msg.innerHTML = 'Password Confirm cannot be blank';
     value = false;
-  } else if(passwordValue !== passwordConfirmValue) {
+  }
+
+  if(passwordConfirmValue && passwordValue !== passwordConfirmValue) {
     passwordConfirm_msg.innerHTML = 'Password Confirm does not match';
     value = false;
   }

@@ -42,18 +42,19 @@ const renderTasks = (tBodyNode, tasks = []) => {
 
 const finishTask = (e)  => {
   const taskId = e.target.dataset.id;
-  if(tasks[taskId].pomodoroDone!=tasks[taskId].pomodoroCount)
-  {
+  if(tasks[taskId].pomodoroDone !== tasks[taskId].pomodoroCount) {
     alert('Unfinished task');
   }
-  else {tasks[taskId].finished = true;}
+  else {
+    tasks[taskId].finished = true;
+  }
   renderTasks(pomodoroTableBody, tasks);
 }
 
 const increasePomodoroDone = (e) => {
   const taskId = e.target.dataset.id;
-  if(tasks[taskId].pomodoroDone<tasks[taskId].pomodoroCount){
-    tasks[taskId].pomodoroDone+=1;
+  if(tasks[taskId].pomodoroDone < tasks[taskId].pomodoroCount){
+    tasks[taskId].pomodoroDone += 1;
   }
   renderTasks(pomodoroTableBody, tasks);
 }

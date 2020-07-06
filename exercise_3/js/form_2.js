@@ -33,7 +33,7 @@ function checkInputs() {
 
   if(passwordValue === '') {
     setErrorFor(password, 'Password cannot be blank');
-  } else if(passwordValue.length<7){
+  } else if(passwordValue.length < 7){
     setErrorFor(password, 'Password must be greater than 7');
   } else {
     setSuccessFor(password);

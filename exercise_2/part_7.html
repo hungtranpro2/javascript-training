@@ -16,11 +16,11 @@
     </form>
     <script>
       function createTable() {
-        const rowNew = prompt("Input rows: ");
-        const columnNew = prompt("Input rows: ");
-        for(let row = 0; row<parseInt(rowNew,10); row++){
+        const rowNew = parseInt(prompt("Input rows: "), 10);
+        const columnNew = parseInt(prompt("Input column: "), 10);
+        for(let row = 0; row < rowNew; row++){
           let table = document.getElementById('myTable').insertRow(row);
-          for(let column = 0; column<parseInt(columnNew,10); column++){
+          for(let column = 0; column < columnNew; column++){
             let cell = table.insertCell(column);
             cell.textContent = "Row-" + row + " Column-" + column;
           }
